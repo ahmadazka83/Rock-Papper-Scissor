@@ -1,0 +1,43 @@
+package projek;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class RockPapperScissor {
+	
+public static void main (String args[]) {
+		
+		Scanner s = new Scanner(System.in);
+		Random r = new Random();
+		char choice;
+		String computerChoice[] = {"Rock","Papper","Scissor"};
+		
+		//rules
+		System.out.println("r = Rock     p = Papper    s = Scissor");
+		
+		//user
+		do {
+		System.out.print("user : ");
+		char user = s.next().toLowerCase().charAt(0);
+		
+		//computer
+		int i = r.nextInt(2);
+		System.out.println("computer : "+computerChoice[i]);
+		//result
+		if(i==0 && user == 'p' || i==1 && user == 's' || i==2 && user == 'r') {
+			System.out.print("you win. ");
+		}
+		else if(i==1 && user == 'r' || i==2 && user == 'p' || i==0 && user == 's' ) {
+			System.out.print("computer win. ");
+		}
+		else {
+			System.out.print("draw. ");
+		}
+		System.out.println("type 'y' to continue");
+		choice = s.next().charAt(0);
+		}
+		while(choice=='y');
+		
+	}
+	
+}
